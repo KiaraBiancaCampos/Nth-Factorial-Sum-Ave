@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Campos Calculate</title>
+  </head>
+  <body>
+    <h1>Nth Factorial, Sum, Average</h1>
+
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number" />
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="resultFactorial"></p>
+    <p id="resultSum"></p>
+    <p id="resultAverage"></p>
+
+    <script>
+      function calculate() {
+        const number = parseInt(document.getElementById("number").value);
+
+        // nth factorial using while loop
+        let factorial = 1;
+        let i = 1;
+        while (i <= number) {
+          factorial *= i;
+          i++;
+        }
+        document.getElementById(
+          "resultFactorial"
+        ).innerText = `Factorial: ${factorial}`;
+
+        // sum using do while loop
+        let sum = 0;
+        let j = 1;
+        do {
+          sum += j;
+          j++;
+        } while (j <= number);
+        document.getElementById("resultSum").innerText = `Sum: ${sum}`;
+
+        // average using for loop
+        let total = 0;
+        for (let k = 1; k <= number; k++) {
+          total += k;
+        }
+        const average = total / number;
+        document.getElementById(
+          "resultAverage"
+        ).innerText = `Average: ${average}`;
+      }
+    </script>
+  </body>
+</html>
